@@ -1,0 +1,89 @@
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+}
+
+ol, ul {
+  padding-left: 30px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.prev {
+  margin-bottom: 100px;
+}
+
+.opBox {
+  background: #fff;
+  border: 2px solid #999;
+  float: left;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 150px;
+  margin-right: -2px;
+  margin-top: -2px;
+  padding: 0;
+  text-align: center;
+  width: 150px;
+}
+
+.numBox {
+  background: #fff;
+  border: 2px solid #999;
+  float: left;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 150px;
+  margin-right: -2px;
+  margin-top: -2px;
+  padding: 0;
+  text-align: center;
+  width: 250px;
+}
+
+.textBox {
+  background: #fff;
+  border: 2px solid #999;
+  float: left;
+  font-size: 100px;
+  font-weight: bold;
+  line-height: 123px;
+  height: 146px;
+  margin-right: -2px;
+  margin-top: -2px;
+  padding: 0;
+  text-align: right;
+  width: 1038px;
+}
+
+.square:focus {
+  outline: none;
+}
+.numBox:focus {
+  outline: none;
+}
+.opBox:focus {
+  outline: none;
+}
+.textBox:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: row;
+}
+
+.prev-value {
+  margin-left: 20px;
+}
