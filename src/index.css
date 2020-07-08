@@ -1,13 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --accent: #b762fc;
+  --highlight: #70b8ff;
+  --background-color: #ababab;
+  background-image: linear-gradient(to bottom left, var(--accent), var(--highlight) 10%, var(--background-color) 35%);
+  background-attachment: fixed;
+/*  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  margin: 0;*/
+}
+.title{
+  margin-top: 50px;
+  margin-left: 30px;
+  font-size: 40px;
+  font-family: 'Varela Round', sans-serif;
+  color: white;
+  /*cursor: default;*/
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.grid{
+  margin-top: 80px;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding: 0px;
 }
+
+ul{
+  display: block;
+  padding: 0px;
+  /*max-width: 300px;*/
+  list-style-type: none; /* Bullet point*/
+  /*margin-block-start: 1px;*/
+  /*margin-block-end: 1em;*/
+  /*margin-inline-start: 0px;*/
+  /*margin-inline-end: 0px;*/
+  /*padding-inline-start: 40px;*/
+}
+.appBox{
+  display: inline-block;
+  max-width: 300px;
+  width: 500px;
+  height: 500px;
+  padding: 0px 0px 100px 0px; /* top right bottom left */
+  /*padding: 2em 2em;*/
+  list-style: none;
+  cursor: default;
+  /*font-size: 1.2em;*/
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.appImage{
+  /*position: relative;*/
+  /*width: 100%;*/
+}
+
+/*h1{
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+}*/
