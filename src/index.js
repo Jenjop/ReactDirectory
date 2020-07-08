@@ -53,7 +53,7 @@ function AppBox(props){
 		<li className='appBox'>
 			{/*<div style={{backgroundImage: `url('${props.img}')`}}>*/}
 			<div className='appDiv'>
-				<img className='appImg' src={img} />
+				<img className='appImg' draggable="false" src={img} />
 				<div className='appColorBox'>
 					{/*<h1 className='appName'>*/}
 					<div className='appName'>

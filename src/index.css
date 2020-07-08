@@ -4,7 +4,7 @@ body {
   --accent: #b762fc;
   --highlight: #70b8ff;
   --background-color: #ababab;
-  background-image: linear-gradient(to bottom left, var(--accent), var(--highlight) 10%, var(--background-color) 35%);
+  background-image: linear-gradient(to bottom left, var(--accent), var(--highlight) 10%, var(--background-color) 35%, var(--background-color) 85%,var(--accent));
   background-attachment: fixed;
   /*No Scrolling*/
   overflow: hidden;
@@ -55,6 +55,9 @@ ul{
   /*text-align: center;*/
 
   transition: transform .7s;
+
+  /*No Image Dragging*/
+  user-drag: none;
 
   /*background-size: cover;*/
   /*background-position: 50% 50%;*/
@@ -109,6 +112,9 @@ ul{
   font-size: 40px;
   font-weight: bold;
 
+  /*No Text Selection*/
+  user-select: none;
+
   /*background-color: rgba(0,0,0,0.2);*/
 }
 .appBox:hover{
@@ -117,6 +123,7 @@ ul{
   /*color: white;*/
   transform: scale(1.3) translate(0, 30px);
   z-index:1;
+  cursor: pointer;
 }
 
 .appBox:hover .appColorBox{
