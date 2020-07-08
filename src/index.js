@@ -22,7 +22,9 @@ class Page extends React.Component {
 	}	
 
 	render(){
-		return this.state.obj		
+		return (
+			<AppWrapper app={this.state.obj} />
+		)
 	}
 }
 // Holds Title and the grid
@@ -86,6 +88,14 @@ function AppBox(props){
 				</div>
 			</div>
 		</li>
+	);
+}
+
+function AppWrapper(props){
+	return(
+		<div className='appWrapper'>
+			{props.app}
+		</div>
 	);
 }
 
