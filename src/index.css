@@ -1,26 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
-:root{
+/*:root{
   --accent: #b762fc;
   --highlight: #70b8ff;
   --background-color: #ababab;
-};
-/*body.Directory {
+};*/
+body {
   --accent: #b762fc;
   --highlight: #70b8ff;
   --background-color: #ababab;
   background-image: linear-gradient(to bottom left, var(--accent), var(--highlight) 10%, var(--background-color) 35%, var(--background-color) 85%,var(--accent));
   background-attachment: fixed;
 
-}*/
+}
   /*No Scrolling*/
   /*overflow: hidden;*/
+
 .title{
   margin-top: 50px;
   margin-left: 30px;
   font-size: 60px;
   font-family: 'Varela Round', sans-serif;
   color: white;
+}
+
+.subtitle{
+  display: table-cell;
+  margin-left: 2.5em;
+  margin-right: 2.5em;
+  font-size: 40px;
+  font-family: 'Varela Round', sans-serif;
+  color: white;
+}
+
+.appHeader{
+  display: table-row;
+}
+
+.backButton{
+  display: table-cell;
+  margin-left: 5em;
+  margin-right: 2.5em;
+  background: rgba(0,0,0,0.4);
+  border: 5px solid transparent;
+  font-size: 20px;
+  color: white;
+  border-image: linear-gradient(to right, var(--accent), var(--highlight) 10%, var(--accent)) 30;
 }
 
 .grid{
@@ -30,7 +55,7 @@
   padding: 0px;
 }
 
-ul{
+.gridUL{
   display: block;
   padding: 0px;
   /*max-width: 300px;*/
@@ -142,6 +167,7 @@ ul{
   right: 0;
   bottom: 0;
   left: 0;
+  /*background-color: white;*/
 }
 
 

@@ -9,9 +9,10 @@ class Page extends React.Component {
 
 	constructor(props){
 		super(props);
-		this.state = {name: 'Directory', obj: <Directory
+		this.dirState = {name: 'Directory', obj: <Directory
 													onClick={(app) => this.appClick(app)}
 												/>}
+		this.state = this.dirState
 	}
 
 	appClick(app){
@@ -22,8 +23,13 @@ class Page extends React.Component {
 	}	
 
 	render(){
+		if (this.state.name === 'Directory'){
+			return(
+				this.state.obj
+			)
+		}
 		return (
-			<AppWrapper app={this.state.obj} />
+			<AppWrapper app={this.state} onClick={() => this.appClick(this.dirState)}/>
 		)
 	}
 }
@@ -66,7 +72,7 @@ class Grid extends React.Component {
 	render() {
 		return(
 			<dir className='grid'>
-				<ul>
+				<ul className='gridUL'>
 					{this.items}
 				</ul>
 			</dir>
@@ -94,9 +100,33 @@ function AppBox(props){
 function AppWrapper(props){
 	return(
 		<div className='appWrapper'>
-			{props.app}
+			<div className='appHeader'>
+				<BackButton app={props.app.name} onClick={props.onClick}/>
+				<div className='subtitle'>
+					{props.app.name}
+				</div>
+			</div>
+			{props.app.obj}
 		</div>
 	);
+}
+
+function BackButton(props){
+	// if (props.app !== 'Directory'){
+	// 	return(
+	// 		<button className='backButton' onClick={props.onClick}>
+	// 			Back To Directory
+	// 		</button>
+	// 	)
+	// }
+	// else{
+	// 	return null
+	// }
+		return(
+			<button className='backButton' onClick={props.onClick}>
+				Back To Directory
+			</button>
+		)
 }
 
 ReactDOM.render(
