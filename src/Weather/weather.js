@@ -6,7 +6,7 @@ import './weather.css';
 var api_key = '40b84f4171d173d01d8b03a7f4c83159'
 
 var lat = '32.94702'
-var lon = '-118.20220'
+var lon = '-117.20220'
 var units = 'imperial' //'metric', 'imperial'
 var day_name = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 

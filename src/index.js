@@ -58,7 +58,7 @@ class Grid extends React.Component {
 		this.apps= [
 			{name: 'Calculator', img: 'img/Calculator.png', obj: <Calculator />},
 			// {name: 'Weather', img: 'https://bbriverboats.com/img/current-conditions/weather-icons/clear-day.png'},
-			{name: 'Weather', img: 'img/Calculator.png', obj: <Weather />},
+			{name: 'Weather', img: 'img/Weather2.png', obj: <Weather />},
 			{name: 'Test', img: 'img/Calculator.png', obj: null},
 			{name: 'Another Test', img: 'img/Calculator.png', obj: null},
 		]

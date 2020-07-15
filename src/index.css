@@ -68,6 +68,8 @@ body {
 }
 .appBox{
   /*position: absolute;*/
+  /*float: top;*/
+  /*top: 10px;*/
   display: inline-block;
   max-width: 400px;
   max-height: 400px;
@@ -125,6 +127,7 @@ body {
   background-color: rgba(0,0,0,0.2);
 }
 .appName{
+  /*float: top;*/
   /*left: 10px;*/
   /*position: absolute;*/
   /*top: 10px;*/
