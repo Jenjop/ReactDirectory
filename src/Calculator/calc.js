@@ -151,8 +151,8 @@ class Calculator extends React.Component {
 	}
 
 	handleOperationClick(i) {
-		if (i === '-'){
-			if (this.state.new === true){
+		if (i === '-'){ //Input '-'
+			if (this.state.new === true){ //Input on empty line
 				this.setState({
 					prev: this.state.prev,
 					cur: '-',
@@ -161,7 +161,7 @@ class Calculator extends React.Component {
 					open_paren: this.state.open_paren
 				})
 			}
-			else if(this.state.op_allowed || !this.state.op_allowed){
+			else if(this.state.op_allowed || !this.state.op_allowed){ //Any other input?
 				let newCur = this.state.cur + i
 				this.setState({
 					prev: this.state.prev,
@@ -171,7 +171,7 @@ class Calculator extends React.Component {
 					open_paren: this.state.open_paren
 				})
 			}
-			else{
+			else{ //I don't think this runs?
 				let newCur = this.state.cur.replace(/.$/, i)
 				this.setState({
 					prev: this.state.prev,
@@ -182,7 +182,7 @@ class Calculator extends React.Component {
 				})
 			}
 		}
-		else if (this.state.new){
+		else if (this.state.new){ //If inputting +,/,* on empty line, add to previous answer
 			let newCur = this.state.prev + i
 			this.setState({
 				prev: this.state.prev,
@@ -192,7 +192,7 @@ class Calculator extends React.Component {
 				open_paren: this.state.open_paren
 			})			
 		}
-		else if (this.state.op_allowed){
+		else if (this.state.op_allowed){ //If operation is valid, append to equation
 			let newCur = this.state.cur + i
 			this.setState({
 				prev: this.state.prev,
@@ -202,7 +202,7 @@ class Calculator extends React.Component {
 				open_paren: this.state.open_paren
 			})
 		}
-		else{
+		else{ //If operation is not valid, replace the last operation with new
 			let newCur = this.state.cur.replace(/.$/, i)
 			this.setState({
 				prev: this.state.prev,
@@ -272,10 +272,12 @@ ReactDOM.render(
 
 
 function solve(eq){
-	// \d(.\d+)? matches number w/ decimal
-	var expRe = /(?<base>(?:-)?\d(?:\.\d+)?)\^(?<power>(?:-)?\d(?:\.\d+)?)/
-	var multRe = /(?<base>(?:-)?\d(?:\.\d+)?)(x|\/)(?<power>(?:-)?\d(?:\.\d+)?)/
-	var addRe = /(?<base>(?:-)?\d(?:\.\d+)?)(\+|-)(?<power>(?:-)?\d(?:\.\d+)?)/
+	// \d*(.\d+)? matches number w/ decimal
+	// (?<=\d) Requires the +/- to be preceded by a number
+	var expRe = /(?<base>(?:-)?\d*(?:\.\d+)?)\^(?<power>(?:-)?\d*(?:\.\d+)?)/
+	var multRe = /(?<base>(?:-)?\d*(?:\.\d+)?)(x|\/)(?<power>(?:-)?\d*(?:\.\d+)?)/
+	var addRe = /(?<base>(?:-)?\d*(?:\.\d+)?)(?<=\d)(\+|-)(?<power>(?:-)?\d*(?:\.\d+)?)/
+
 
 	let ret
 
@@ -287,7 +289,7 @@ function solve(eq){
 
 	ret = multRe.exec(eq)
 	while(ret != null){
-	  eq = eq.replace(multRe, ret[2] === 'x'? parseFloat(ret[1]) * parseFloat(ret[3]) : parseFloat(ret[1]) * parseFloat(ret[3]))
+	  eq = eq.replace(multRe, ret[2] === 'x'? parseFloat(ret[1]) * parseFloat(ret[3]) : parseFloat(ret[1]) / parseFloat(ret[3]))
 	  ret = multRe.exec(eq)
 	}
 
